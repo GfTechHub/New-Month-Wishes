@@ -1,595 +1,275 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Month - November 2024</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Month - November 2025</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;}
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
-        background: #0a0a0a;
-        color: #fff;
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      overflow-x:hidden;
+      background:#0a0a0a;
+      color:#fff;
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero-section {
-        min-height: 100vh;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #c75b39 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#ff6b35 0%,#f7931e 50%,#c75b39 100%);
+      position:relative;
+      overflow:hidden;
     }
 
-    /* Animated Leaves Background */
+    /* FALLING LEAVES */
     .leaf {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: #ff8c42;
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        opacity: 0.6;
-        animation: fall linear infinite;
+      position:absolute;
+      width:30px;
+      height:30px;
+      background:#ff8c42;
+      clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+      opacity:0.6;
+      animation:fall linear infinite;
     }
-
     @keyframes fall {
-        0% {
-            transform: translateY(-100px) rotate(0deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100vh) rotate(360deg);
-            opacity: 0;
-        }
+      0% {transform:translateY(-100px) rotate(0deg);opacity:1;}
+      100% {transform:translateY(100vh) rotate(360deg);opacity:0;}
     }
 
-    /* Hero Content */
-    .hero-content {
-        text-align: center;
-        z-index: 10;
-        position: relative;
-        padding: 20px;
-    }
+    /* DECORATIONS */
+    .decoration {position:absolute;pointer-events:none;}
+    .pumpkin {font-size:3rem;opacity:0.3;}
+    .pumpkin-1 {top:10%;left:5%;animation:float 6s ease-in-out infinite;}
+    .pumpkin-2 {bottom:15%;right:8%;animation:float 8s ease-in-out infinite 1s;}
+    .maple-leaf {font-size:2.5rem;opacity:0.4;}
+    .maple-1 {top:20%;right:10%;animation:rotate 10s linear infinite;}
+    .maple-2 {bottom:25%;left:10%;animation:rotate 12s linear infinite reverse;}
+    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+    @keyframes rotate {from{transform:rotate(0);}to{transform:rotate(360deg);}}
 
+    /* HERO CONTENT */
+    .hero-content {text-align:center;z-index:10;position:relative;padding:20px;}
     .month-badge {
-        display: inline-block;
-        padding: 10px 30px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 50px;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 30px;
-        opacity: 0;
-        animation: fadeInDown 1s ease forwards 0.2s;
+      display:inline-block;padding:10px 30px;
+      background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);
+      border-radius:50px;font-size:1rem;font-weight:600;
+      margin-bottom:30px;opacity:0;animation:fadeInDown 1s ease forwards 0.2s;
     }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
+    @keyframes fadeInDown {from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
     .hero-title {
-        font-size: 4rem;
-        font-weight: 900;
-        margin-bottom: 20px;
-        text-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        animation: fadeInUp 1s ease forwards 0.5s;
+      font-size:4rem;font-weight:900;margin-bottom:20px;text-shadow:0 5px 30px rgba(0,0,0,0.3);
+      opacity:0;animation:fadeInUp 1s ease forwards 0.5s;
     }
-
     .hero-subtitle {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 50px;
-        opacity: 0;
-        animation: fadeInUp 1s ease forwards 0.8s;
-        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      font-size:2.5rem;font-weight:700;margin-bottom:50px;text-shadow:0 3px 20px rgba(0,0,0,0.2);
+      opacity:0;animation:fadeInUp 1s ease forwards 0.8s;
     }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Calendar Container */
+    /* CALENDAR */
     .calendar-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 30px;
-        padding: 40px;
-        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        animation: fadeInScale 1s ease forwards 1.2s;
+      max-width:800px;margin:0 auto;
+      background:rgba(255,255,255,0.95);border-radius:30px;padding:40px;
+      box-shadow:0 30px 90px rgba(0,0,0,0.3);
+      opacity:0;animation:fadeInScale 1s ease forwards 1.2s;
+    }
+    @keyframes fadeInScale {from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
+    .calendar-header{text-align:center;margin-bottom:30px;}
+    .calendar-month{font-size:2.5rem;font-weight:900;color:#ff6b35;margin-bottom:5px;}
+    .calendar-year{font-size:1.2rem;color:#666;font-weight:600;}
+    .calendar-grid{
+      display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:20px;
+    }
+    .calendar-day-name{text-align:center;font-weight:700;color:#ff6b35;padding:15px 5px;font-size:1rem;}
+    .calendar-day{
+      aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#ff6b35,#f7931e);
+      color:white;border-radius:15px;font-size:1.2rem;font-weight:700;
+      cursor:pointer;transition:all .3s ease;
+      opacity:0;transform:scale(0) rotate(-180deg);
+      box-shadow:0 5px 15px rgba(255,107,53,0.3);
+    }
+    .calendar-day.filled{animation:fillDay .6s cubic-bezier(.68,-.55,.265,1.55) forwards;}
+    @keyframes fillDay{
+      0%{opacity:0;transform:scale(0) rotate(-180deg);}
+      70%{transform:scale(1.2) rotate(10deg);}
+      100%{opacity:1;transform:scale(1) rotate(0);}
+    }
+    .calendar-day:hover{transform:scale(1.1) translateY(-5px);box-shadow:0 10px 30px rgba(255,107,53,.5);}
+    .calendar-day.empty{background:transparent;box-shadow:none;}
+    .calendar-day.today{
+      background:linear-gradient(135deg,#c75b39,#ff6b35);
+      box-shadow:0 0 30px rgba(255,107,53,0.8);
+      animation:pulse 2s ease infinite;
+    }
+    @keyframes pulse{
+      0%,100%{box-shadow:0 0 30px rgba(255,107,53,.8);}
+      50%{box-shadow:0 0 50px rgba(255,107,53,1);}
     }
 
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
+    /* FEATURES SECTION */
+    .features-section{padding:100px 0;background:#0a0a0a;}
+    .feature-card{
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;padding:40px;margin:20px 0;text-align:center;
+      transition:all .5s ease;border:1px solid rgba(255,107,53,0.2);
+      backdrop-filter:blur(10px);
     }
+    .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(255,107,53,.3);border-color:rgba(255,107,53,.5);}
+    .feature-icon{font-size:3rem;margin-bottom:20px;color:#ff6b35;}
+    .feature-title{font-size:1.5rem;font-weight:700;margin-bottom:15px;color:#fff;}
+    .feature-text{color:rgba(255,255,255,0.7);}
 
-    .calendar-header {
-        text-align: center;
-        margin-bottom: 30px;
+    /* FOOTER */
+    .greeting-footer{
+      background:rgba(255,107,53,0.1);
+      backdrop-filter:blur(10px);
+      border-top:2px solid rgba(255,107,53,0.3);
+      padding:30px 0;text-align:center;
     }
-
-    .calendar-month {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #ff6b35;
-        margin-bottom: 5px;
+    .greeting-badge{
+      display:inline-block;
+      background:linear-gradient(135deg,#ff6b35,#f7931e);
+      color:white;padding:15px 40px;border-radius:50px;
+      font-size:1.2rem;font-weight:700;
+      box-shadow:0 10px 30px rgba(255,107,53,.4);
+      transition:all .3s ease;
+      animation:glow 3s ease-in-out infinite;
     }
-
-    .calendar-year {
-        font-size: 1.2rem;
-        color: #666;
-        font-weight: 600;
+    .greeting-badge:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 15px 40px rgba(255,107,53,.6);}
+    @keyframes glow{
+      0%,100%{box-shadow:0 10px 30px rgba(255,107,53,.4);}
+      50%{box-shadow:0 10px 50px rgba(255,107,53,.7);}
     }
+    .greeting-icon{margin:0 10px;}
 
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 10px;
-        margin-top: 20px;
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero-title{font-size:2.5rem;}
+      .hero-subtitle{font-size:1.5rem;}
+      .calendar-container{padding:20px;}
+      .calendar-month{font-size:2rem;}
+      .calendar-day{font-size:1rem;}
+      .calendar-day-name{font-size:0.8rem;padding:10px 2px;}
     }
-
-    .calendar-day-name {
-        text-align: center;
-        font-weight: 700;
-        color: #ff6b35;
-        padding: 15px 5px;
-        font-size: 1rem;
-    }
-
-    .calendar-day {
-        aspect-ratio: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #ff6b35, #f7931e);
-        color: white;
-        border-radius: 15px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: scale(0) rotate(-180deg);
-        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-    }
-
-    .calendar-day.filled {
-        animation: fillDay 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-    }
-
-    @keyframes fillDay {
-        0% {
-            opacity: 0;
-            transform: scale(0) rotate(-180deg);
-        }
-        70% {
-            transform: scale(1.2) rotate(10deg);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1) rotate(0deg);
-        }
-    }
-
-    .calendar-day:hover {
-        transform: scale(1.1) translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
-    }
-
-    .calendar-day.empty {
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .calendar-day.today {
-        background: linear-gradient(135deg, #c75b39, #ff6b35);
-        box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
-        animation: pulse 2s ease infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% {
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
-        }
-        50% {
-            box-shadow: 0 0 50px rgba(255, 107, 53, 1);
-        }
-    }
-
-    /* Decorative Elements */
-    .decoration {
-        position: absolute;
-        pointer-events: none;
-    }
-
-    .pumpkin {
-        font-size: 3rem;
-        opacity: 0.3;
-    }
-
-    .pumpkin-1 {
-        top: 10%;
-        left: 5%;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .pumpkin-2 {
-        bottom: 15%;
-        right: 8%;
-        animation: float 8s ease-in-out infinite 1s;
-    }
-
-    .maple-leaf {
-        font-size: 2.5rem;
-        opacity: 0.4;
-    }
-
-    .maple-1 {
-        top: 20%;
-        right: 10%;
-        animation: rotate 10s linear infinite;
-    }
-
-    .maple-2 {
-        bottom: 25%;
-        left: 10%;
-        animation: rotate 12s linear infinite reverse;
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Features Section */
-    .features-section {
-        padding: 100px 0;
-        background: #0a0a0a;
-    }
-
-    .feature-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 20px;
-        padding: 40px;
-        margin: 20px 0;
-        text-align: center;
-        transition: all 0.5s ease;
-        border: 1px solid rgba(255, 107, 53, 0.2);
-        backdrop-filter: blur(10px);
-    }
-
-    .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
-        border-color: rgba(255, 107, 53, 0.5);
-    }
-
-    .feature-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        color: #ff6b35;
-    }
-
-    .feature-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #fff;
-    }
-
-    .feature-text {
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* Greeting Footer */
-    .greeting-footer {
-        background: rgba(255, 107, 53, 0.1);
-        backdrop-filter: blur(10px);
-        border-top: 2px solid rgba(255, 107, 53, 0.3);
-        padding: 30px 0;
-        text-align: center;
-    }
-
-    .greeting-badge {
-        display: inline-block;
-        background: linear-gradient(135deg, #ff6b35, #f7931e);
-        color: white;
-        padding: 15px 40px;
-        border-radius: 50px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-        transition: all 0.3s ease;
-        animation: glow 3s ease-in-out infinite;
-    }
-
-    .greeting-badge:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
-    }
-
-    @keyframes glow {
-        0%, 100% {
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-        }
-        50% {
-            box-shadow: 0 10px 50px rgba(255, 107, 53, 0.7);
-        }
-    }
-
-    .greeting-icon {
-        margin-right: 10px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .hero-title {
-            font-size: 2.5rem;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-        }
-
-        .calendar-container {
-            padding: 20px;
-        }
-
-        .calendar-month {
-            font-size: 2rem;
-        }
-
-        .calendar-day {
-            font-size: 1rem;
-        }
-
-        .calendar-day-name {
-            font-size: 0.8rem;
-            padding: 10px 2px;
-        }
-    }
-</style>
-
-
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <!-- Animated Leaves -->
-        <div id="leavesContainer"></div>
-
-
-    <!-- Decorative Elements -->
+  <section class="hero-section">
+    <div id="leavesContainer"></div>
     <div class="decoration pumpkin pumpkin-1">🎃</div>
     <div class="decoration pumpkin pumpkin-2">🎃</div>
     <div class="decoration maple-leaf maple-1">🍁</div>
     <div class="decoration maple-leaf maple-2">🍂</div>
 
     <div class="hero-content">
-        <div class="month-badge">
-            <i class="fas fa-calendar-alt me-2"></i> NEW MONTH
+      <div class="month-badge"><i class="fas fa-calendar-alt me-2"></i>NEW MONTH</div>
+      <h1 class="hero-title">HAPPY NEW MONTH</h1>
+      <h2 class="hero-subtitle">WELCOME TO NOVEMBER</h2>
+
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <div class="calendar-month">November</div>
+          <div class="calendar-year">2025</div>
         </div>
-        <h1 class="hero-title">HAPPY NEW MONTH</h1>
-        <h2 class="hero-subtitle">WELCOME TO NOVEMBER</h2>
 
-        <!-- Calendar -->
-        <div class="calendar-container">
-            <div class="calendar-header">
-                <div class="calendar-month">November</div>
-                <div class="calendar-year">2025</div>
-            </div>
+        <div class="calendar-grid">
+          <div class="calendar-day-name">SUN</div>
+          <div class="calendar-day-name">MON</div>
+          <div class="calendar-day-name">TUE</div>
+          <div class="calendar-day-name">WED</div>
+          <div class="calendar-day-name">THU</div>
+          <div class="calendar-day-name">FRI</div>
+          <div class="calendar-day-name">SAT</div>
 
-            <div class="calendar-grid">
-                <!-- Day Names -->
-                <div class="calendar-day-name">SUN</div>
-                <div class="calendar-day-name">MON</div>
-                <div class="calendar-day-name">TUE</div>
-                <div class="calendar-day-name">WED</div>
-                <div class="calendar-day-name">THU</div>
-                <div class="calendar-day-name">FRI</div>
-                <div class="calendar-day-name">SAT</div>
+          <!-- Empty slots -->
+          <div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div>
 
-                <!-- Days -->
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day" data-day="1">1</div>
-                <div class="calendar-day" data-day="2">2</div>
-                <div class="calendar-day" data-day="3">3</div>
-                <div class="calendar-day" data-day="4">4</div>
-                <div class="calendar-day" data-day="5">5</div>
-                <div class="calendar-day" data-day="6">6</div>
-                <div class="calendar-day" data-day="7">7</div>
-                <div class="calendar-day" data-day="8">8</div>
-                <div class="calendar-day" data-day="9">9</div>
-                <div class="calendar-day" data-day="10">10</div>
-                <div class="calendar-day" data-day="11">11</div>
-                <div class="calendar-day" data-day="12">12</div>
-                <div class="calendar-day" data-day="13">13</div>
-                <div class="calendar-day" data-day="14">14</div>
-                <div class="calendar-day" data-day="15">15</div>
-                <div class="calendar-day" data-day="16">16</div>
-                <div class="calendar-day" data-day="17">17</div>
-                <div class="calendar-day" data-day="18">18</div>
-                <div class="calendar-day" data-day="19">19</div>
-                <div class="calendar-day" data-day="20">20</div>
-                <div class="calendar-day" data-day="21">21</div>
-                <div class="calendar-day" data-day="22">22</div>
-                <div class="calendar-day" data-day="23">23</div>
-                <div class="calendar-day" data-day="24">24</div>
-                <div class="calendar-day" data-day="25">25</div>
-                <div class="calendar-day" data-day="26">26</div>
-                <div class="calendar-day" data-day="27">27</div>
-                <div class="calendar-day" data-day="28">28</div>
-                <div class="calendar-day" data-day="29">29</div>
-                <div class="calendar-day" data-day="30">30</div>
-            </div>
+          <!-- Real days -->
+          <div class="calendar-day" data-day="1" style="opacity:1;transform:scale(1);">1</div>
+          <div class="calendar-day" data-day="2">2</div><div class="calendar-day" data-day="3">3</div><div class="calendar-day" data-day="4">4</div><div class="calendar-day" data-day="5">5</div><div class="calendar-day" data-day="6">6</div><div class="calendar-day" data-day="7">7</div><div class="calendar-day" data-day="8">8</div><div class="calendar-day" data-day="9">9</div><div class="calendar-day" data-day="10">10</div><div class="calendar-day" data-day="11">11</div><div class="calendar-day" data-day="12">12</div><div class="calendar-day" data-day="13">13</div><div class="calendar-day" data-day="14">14</div><div class="calendar-day" data-day="15">15</div><div class="calendar-day" data-day="16">16</div><div class="calendar-day" data-day="17">17</div><div class="calendar-day" data-day="18">18</div><div class="calendar-day" data-day="19">19</div><div class="calendar-day" data-day="20">20</div><div class="calendar-day" data-day="21">21</div><div class="calendar-day" data-day="22">22</div><div class="calendar-day" data-day="23">23</div><div class="calendar-day" data-day="24">24</div><div class="calendar-day" data-day="25">25</div><div class="calendar-day" data-day="26">26</div><div class="calendar-day" data-day="27">27</div><div class="calendar-day" data-day="28">28</div><div class="calendar-day" data-day="29">29</div><div class="calendar-day" data-day="30">30</div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Features Section -->
-<section class="features-section">
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold">November Highlights</h2>
-            <p class="lead text-white-50">What makes this month special</p>
+      <div class="text-center mb-5">
+        <h2 class="display-4 fw-bold">November Highlights</h2>
+        <p class="lead text-white-50">What makes this month special</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card"><div class="feature-icon"><i class="fas fa-heart"></i></div>
+            <h3 class="feature-title">Gratitude</h3>
+            <p class="feature-text">A time to reflect and give thanks for all the blessings in our lives.</p>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="feature-title">Gratitude</h3>
-                    <p class="feature-text">A time to reflect and give thanks for all the blessings in our lives.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="feature-title">Togetherness</h3>
-                    <p class="feature-text">Bringing family and friends closer in celebration and warmth.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="feature-title">New Beginnings</h3>
-                    <p class="feature-text">A fresh start and new opportunities await in this beautiful month.</p>
-                </div>
-            </div>
+        <div class="col-md-4">
+          <div class="feature-card"><div class="feature-icon"><i class="fas fa-users"></i></div>
+            <h3 class="feature-title">Togetherness</h3>
+            <p class="feature-text">Bringing family and friends closer in celebration and warmth.</p>
+          </div>
         </div>
+        <div class="col-md-4">
+          <div class="feature-card"><div class="feature-icon"><i class="fas fa-leaf"></i></div>
+            <h3 class="feature-title">New Beginnings</h3>
+            <p class="feature-text">A fresh start and new opportunities await in this beautiful month.</p>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Greeting Footer -->
-<footer class="greeting-footer">
+  <!-- FOOTER -->
+  <footer class="greeting-footer">
     <div class="container">
-        <div class="greeting-badge">
-            <i class="fas fa-heart greeting-icon"></i>
-            Greetings from Ezekiel Ifeoluwa
-            <i class="fas fa-heart greeting-icon"></i>
-        </div>
+      <div class="greeting-badge">
+        <i class="fas fa-heart greeting-icon"></i>
+        Greetings from Ezekiel Ifeoluwa
+        <i class="fas fa-heart greeting-icon"></i>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script>
+  <script>
     // Create falling leaves
     function createLeaves() {
-        const container = document.getElementById('leavesContainer');
-        const leafCount = 20;
-
-        for (let i = 0; i < leafCount; i++) {
-            const leaf = document.createElement('div');
-            leaf.className = 'leaf';
-            leaf.style.left = Math.random() * 100 + '%';
-            leaf.style.animationDuration = (Math.random() * 5 + 8) + 's';
-            leaf.style.animationDelay = Math.random() * 5 + 's';
-            
-            // Random autumn colors
-            const colors = ['#ff6b35', '#f7931e', '#c75b39', '#ff8c42', '#d4691b'];
-            leaf.style.background = colors[Math.floor(Math.random() * colors.length)];
-            
-            container.appendChild(leaf);
-        }
+      const container = document.getElementById("leavesContainer");
+      for (let i=0;i<20;i++){
+        const leaf=document.createElement("div");
+        leaf.className="leaf";
+        leaf.style.left=Math.random()*100+"%";
+        leaf.style.animationDuration=(Math.random()*5+8)+"s";
+        leaf.style.animationDelay=Math.random()*5+"s";
+        const colors=["#ff6b35","#f7931e","#c75b39","#ff8c42","#d4691b"];
+        leaf.style.background=colors[Math.floor(Math.random()*colors.length)];
+        container.appendChild(leaf);
+      }
     }
 
-    // Animate calendar days filling in
+    // Animate calendar days filling (except day 1)
     function fillCalendar() {
-        const days = document.querySelectorAll('.calendar-day[data-day]');
-        const today = 31; // October 31st is today
-        
-        days.forEach((day, index) => {
-            setTimeout(() => {
-                day.classList.add('filled');
-                
-                // Highlight today (31st which would be day 31 in October, but we're showing November)
-                // For the demo, let's highlight the 1st as the new month start
-                if (index === 0) {
-                    setTimeout(() => {
-                        day.classList.add('today');
-                    }, 600);
-                }
-            }, index * 80 + 1500); // Start after hero animations
-        });
+      const days=document.querySelectorAll(".calendar-day[data-day]");
+      days.forEach((day,i)=>{
+        if(i===0) return; // keep 1 visible
+        setTimeout(()=>{
+          day.classList.add("filled");
+        },i*100+1000);
+      });
     }
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-        createLeaves();
-        fillCalendar();
+    document.addEventListener("DOMContentLoaded",()=>{
+      createLeaves();
+      fillCalendar();
     });
-
-    // Add click effect to calendar days
-    document.querySelectorAll('.calendar-day[data-day]').forEach(day => {
-        day.addEventListener('click', function() {
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = '';
-                this.classList.add('filled');
-            }, 10);
-        });
-    });
-</script>
-
-
+  </script>
 </body>
 </html>
